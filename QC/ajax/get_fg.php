@@ -4,7 +4,7 @@
 
    
     
-    $strSQL = "SELECT top 100 [group],charge,coilno,pdate,diam,nospec,tensile,yield,pass FROM HDW ";
+    $strSQL = "SELECT top 100 [group],charge,coilno,pdate,diam,nospec,tensile,yield,pass FROM PCS ";
     // $strSQL = "SELECT  STCODE, STNAME1,STONHAND,STMAX,STMIN,STLAYOUT,STUNIT FROM  STOCK ORDER BY STCODE";
 
     $obj=odbc_exec(sql_connect(),$strSQL) ;
