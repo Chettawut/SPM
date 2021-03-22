@@ -4,7 +4,7 @@
 
    
     
-    $strSQL = "SELECT top 100 [group],charge,coilno,pdate,diam,nospec,tensile,yield,pass FROM Product ";
+    $strSQL = "SELECT top 100 [group],charge,coilno,pdate,diam,nospec,tensile,yield,pass FROM HDW ";
     // $strSQL = "SELECT  STCODE, STNAME1,STONHAND,STMAX,STMIN,STLAYOUT,STUNIT FROM  STOCK ORDER BY STCODE";
 
     $obj=odbc_exec(sql_connect(),$strSQL) ;
@@ -29,7 +29,7 @@
             array_push($json_result['charge'],iconv("tis-620","UTF-8",odbc_result($obj, "charge")));
             array_push($json_result['coilno'],iconv("tis-620","UTF-8",odbc_result($obj, "coilno")));
             array_push($json_result['pdate'],iconv("tis-620","UTF-8",odbc_result($obj, "pdate")));
-            array_push($json_result['diam'],iconv("tis-620","UTF-8",odbc_result($obj, "diam")));
+            array_push($json_result['diam'],iconv("tis-620","UTF-8",number_format((float)odbc_result($obj, "diam"), 2, '.', '')));
             array_push($json_result['nospec'],iconv("tis-620","UTF-8",odbc_result($obj, "nospec")));
             array_push($json_result['tensile'],iconv("tis-620","UTF-8",odbc_result($obj, "tensile")));
             array_push($json_result['yield'],iconv("tis-620","UTF-8",odbc_result($obj, "yield")));
